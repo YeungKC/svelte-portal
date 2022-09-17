@@ -1,9 +1,9 @@
 <script>
-  import PortalContainer from "$lib/portal-container.svelte"
+	import PortalContainer from '$lib/portal-container.svelte';
 </script>
 
 <main>
-  <slot />
+	<slot />
 </main>
 
 <PortalContainer />
