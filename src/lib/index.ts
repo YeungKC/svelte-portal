@@ -1,3 +1,4 @@
 // Reexport your entry components here
-export { default as Portal } from './portal.svelte';
-export { default as PortalContainer } from './portal-container.svelte';
+import PortalContainer from '$lib/portal-container.svelte';
+import Portal from '$lib/portal.svelte';
+export { Portal, PortalContainer };
