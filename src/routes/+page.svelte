@@ -2,6 +2,7 @@
 	import { onDestroy } from 'svelte';
 	import Portal from '$lib/portal.svelte';
 	import Example from './_portal.svelte';
+	import { browser } from '$app/environment';
 
 	let timestamp = new Date().valueOf();
 
@@ -17,7 +18,9 @@
 </script>
 
 <h1>This is a page</h1>
-<h2>{timestamp}</h2>
+{#if browser}
+	<h2>{timestamp}</h2>
+{/if}
 
 <button on:click={() => (opened = true)}> Open portal </button>
 
