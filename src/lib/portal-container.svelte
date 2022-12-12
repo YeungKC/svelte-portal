@@ -6,6 +6,6 @@
 	$: portalStore = getPortal(name);
 </script>
 
-{#each $portalStore as { portalId, portalName, component, props } (portalId)}
+{#each $portalStore as { portalId, component, props } (portalId)}
 	<svelte:component this={component} {...props} />
 {/each}

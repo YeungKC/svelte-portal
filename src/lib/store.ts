@@ -5,7 +5,7 @@ import { mapTemplate } from './helper';
 
 interface Portal<T extends Record<string, any>> {
 	portalId: string;
-	portalName?: string;
+	portalContainerName?: string;
 	component: typeof SvelteComponentTyped<T>;
 	props?: T;
 }
@@ -18,7 +18,7 @@ export const getPortal = (key: unknown) =>
 	portalMapTemplate(key === undefined ? DEFAULT_PORTAL_NAME : key);
 
 export const renderPortal = <T extends Record<string, any>>(portal: Portal<T>) => {
-	const portalStore = getPortal(portal.portalName);
+	const portalStore = getPortal(portal.portalContainerName);
 	const $portals = [...get(portalStore)];
 
 	const index = $portals.findIndex(({ portalId }) => portalId === portal.portalId);

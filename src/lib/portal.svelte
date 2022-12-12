@@ -11,43 +11,46 @@
 
 	type $$Props = {
 		'portal-id'?: string;
-		'portal-name'?: string;
+		'portal-container-name'?: string;
 		this: Component;
 	} & Props;
 
 	const defaultPortalId = nanoid();
 
 	let portalId: string;
-	let portalName: string | undefined;
+	let portalContainerName: string | undefined;
 	let component: Component;
-	let props: Omit<$$Props, 'portal-id' | 'portal-name' | 'this'>;
+	let props: Omit<$$Props, 'portal-id' | 'portal-container-name' | 'this'>;
 
 	let previousPortalId: string | undefined;
-	let previousPortalName: string | undefined;
+	let previousPortalContainerName: string | undefined;
 
 	$: {
 		const {
 			'portal-id': _portalId,
-			'portal-name': _portalName,
+			'portal-container-name': _portalContainerName,
 			this: _component,
 			..._props
 		} = $$props as $$Props;
 
 		portalId = _portalId || defaultPortalId;
-		portalName = _portalName;
+		portalContainerName = _portalContainerName;
 		component = _component;
 		props = _props;
 	}
 
 	onDestroy(() => {
-		unRenderPortal(portalId, portalName);
+		unRenderPortal(portalId, portalContainerName);
 	});
 
-	$: if (previousPortalId && (previousPortalId !== portalId || previousPortalName !== portalName))
-		unRenderPortal(previousPortalId, previousPortalName);
+	$: if (
+		previousPortalId &&
+		(previousPortalId !== portalId || previousPortalContainerName !== portalContainerName)
+	)
+		unRenderPortal(previousPortalId, previousPortalContainerName);
 
 	$: previousPortalId = portalId;
-	$: portalName = portalName;
+	$: portalContainerName = portalContainerName;
 
-	$: renderPortal({ portalId, portalName, component, props });
+	$: renderPortal({ portalId, portalContainerName, component, props });
 </script>

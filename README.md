@@ -1,38 +1,58 @@
-# create-svelte
+# svelte-portal
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[中文说明](README-zh.md)
 
-## Creating a project
+A Portal library for Svelte. Supports SSR and Portal updates.
 
-If you're seeing this, you've probably already done this step. Congrats!
+online example：<https://svelte-portal.vercel.app/>
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+example code：<https://github.com/YeungKC/svelte-portal/tree/master/src/routes>
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Installation
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+yarn add @yeungkc/svelte-portal -D
+npm install @yeungkc/svelte-portal --save-dev 
 ```
 
-## Building
+## Usage
 
-To create a production version of your app:
+### Setup Portal Container
 
-```bash
-npm run build
+It is recommended to set up the `<PortalContainer />` in your +layout.svelte, for example:
+
+```svelte
+// +layout.svelte
+<slot/>
+<PortalContainer />
 ```
 
-You can preview the production build with `npm run preview`.
+You can setup multiple Portal Containers by using the name parameter:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```svelte
+// +layout.svelte
+<slot/>
+<PortalContainer name='foo'/>
+```
+
+### Show Portal
+
+Setup the `<Portal />` where you want it to be displayed. The usage is similar to `<svelte:component>`.
+
+```svelte
+<Portal portal-id='id' portal-container-name='name' this={SomeComponent} />
+```
+
+If SomeComponent requires a parameter, foo, you can add it in the `<Portal>`:
+
+```svelte
+<Portal portal-id='id' portal-container-name='name' this={SomeComponent} foo={foo}/>
+```
+
+`portal-id` is an optional parameter for setting a fixed id for the Portal. It defaults to a random id.
+
+`portal-container-name` is an optional parameter for selecting a specific Portal Container for the Portal.
+
+## Known issues
+
+Currently, svelte-portal does not support setting bind and forwarding event like <svelte:component>.
