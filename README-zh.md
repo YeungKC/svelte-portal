@@ -10,7 +10,7 @@ example 代码：<https://github.com/YeungKC/svelte-portal/tree/master/src/route
 
 ```bash
 yarn add @yeungkc/svelte-portal -D
-npm install @yeungkc/svelte-portal --save-dev 
+npm install @yeungkc/svelte-portal --save-dev
 ```
 
 ## 用法
@@ -21,7 +21,7 @@ npm install @yeungkc/svelte-portal --save-dev
 
 ```svelte
 // +layout.svelte
-<slot/>
+<slot />
 <PortalContainer />
 ```
 
@@ -29,8 +29,8 @@ npm install @yeungkc/svelte-portal --save-dev
 
 ```svelte
 // +layout.svelte
-<slot/>
-<PortalContainer name='foo'/>
+<slot />
+<PortalContainer name="foo" />
 ```
 
 ### 展示 Portal
@@ -38,13 +38,13 @@ npm install @yeungkc/svelte-portal --save-dev
 在想要展示 Portal 的地方设置 `<Portal />`，用法和 `<svelte:component>` 相同。
 
 ```svelte
-<Portal portal-id='id' portal-container-name='name' this={SomeComponent} />
+<Portal portal-id="id" portal-container-name="name" this={SomeComponent} />
 ```
 
 如果 SomeComponent 需要参数 foo，可以在 `<Portal>` 中添加：
 
 ```svelte
-<Portal portal-id='id' portal-container-name='name' this={SomeComponent} foo={foo}/>
+<Portal portal-id="id" portal-container-name="name" this={SomeComponent} {foo} />
 ```
 
 `portal-id` 为可选参数，为 portal 设置固定 id，默认为随机 id。
