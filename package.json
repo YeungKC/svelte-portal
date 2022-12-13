@@ -1,6 +1,21 @@
 {
 	"name": "@yeungkc/svelte-portal",
-	"version": "0.0.5",
+	"description": "A Portal library for Svelte. Supports SSR and Portal updates.",
+	"version": "0.0.6",
+	"author": {
+		"name": "YeungKC",
+		"email": "svelte-portal@YeungKC.com",
+		"url": "https://YeungKC.com/"
+	},
+	"homepage": "https://github.com/YeungKC/svelte-portal/",
+	"keywords": [
+		"svelte",
+		"sveltejs",
+		"svelteKit",
+		"portal",
+		"SSR"
+	],
+	"license": "MIT License",
 	"scripts": {
 		"dev": "vite dev",
 		"build-example": "vite build",
