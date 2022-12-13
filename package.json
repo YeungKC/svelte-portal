@@ -15,7 +15,7 @@
 		"portal",
 		"SSR"
 	],
-	"license": "MIT License",
+	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
 		"build-example": "vite build",
