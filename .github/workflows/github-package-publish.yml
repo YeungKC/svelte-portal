@@ -15,8 +15,8 @@ jobs:
           node-version: lts/*
       - run: npm i
       - run: npm run build
-      - run: cd package
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.GITHUG_PACKAGE_TOKEN }}
           registry: https://npm.pkg.github.com
+          package: ./package/package.json
