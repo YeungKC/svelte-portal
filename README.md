@@ -2,7 +2,7 @@
 
 A Portal library for Svelte. Supports SSR and Portal updates.
 
-[中文说明](README-zh.md)
+[中文说明](https://github.com/YeungKC/svelte-portal/blob/master/README-zh.md)
 
 online example：<https://svelte-portal.vercel.app/>
 
