@@ -1,4 +1,4 @@
-name: Lint
+name: Build test
 
 on:
   push:
@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: lts/*
       - run: npm i
-      - run: npm run lint
+      - run: npm run build

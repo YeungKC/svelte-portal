@@ -1,0 +1,22 @@
+name: Github package publish
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - run: npm i
+      - run: npm run build
+      - run: cd package
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.GITHUG_PACKAGE_TOKEN }}
+          registry: https://npm.pkg.github.com
