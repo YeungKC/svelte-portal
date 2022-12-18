@@ -1,7 +1,7 @@
 {
 	"name": "@yeungkc/svelte-portal",
 	"description": "A Portal library for Svelte. Supports SSR and Portal updates.",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"author": {
 		"name": "YeungKC",
 		"email": "svelte-portal@YeungKC.com",
