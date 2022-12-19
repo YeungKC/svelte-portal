@@ -1,6 +1,6 @@
 # svelte-portal
 
-A Portal library for Svelte. Supports SSR and Portal updates.
+A Portal library for Svelte. Supports SSR and **No dom move**.
 
 [中文说明](https://github.com/YeungKC/svelte-portal/blob/master/README-zh.md)
 

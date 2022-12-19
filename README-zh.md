@@ -1,6 +1,6 @@
 # svelte-portal
 
-一个用于 Svelte 的 Portal 库。支持 SSR 和 Portal 更新。
+一个用于 Svelte 的 Portal 库。**没有 Dom 移动操作**和支持 SSR。
 
 在线 example：<https://svelte-portal.vercel.app/>
 
